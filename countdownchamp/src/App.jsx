@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Clock from './Clock'
+import StopWatch from './StopWatch'
 import './App.css'
 import {Form, FormControl, Button} from 'react-bootstrap'
 
@@ -8,7 +9,11 @@ class App extends Component{
     super(props);
     this.state = {
       deadline: 'December 25, 2017',
-      newDeadline: ''
+      newDeadline: '',
+      stopWatchHours: '00',
+      stopWatchMinutes: '00',
+      newStopWatchHours: '',
+      newStopWatchMinutes: ''
     }
   }
 
@@ -16,6 +21,13 @@ class App extends Component{
   {
     this.setState({deadline:this.state.newDeadline});
   }
+
+  ChangeStopWatchTime()
+  {
+    this.setState({stopWatchHours:this.state.newStopWatchHours,
+      stopWatchMinutes: this.state.newStopWatchMinutes });
+  }
+
   render(){
     return(
       <div className="App">
@@ -23,6 +35,11 @@ class App extends Component{
         <Clock
           deadline={this.state.deadline}
         />
+        <StopWatch
+          stopWatchHours={this.state.stopWatchHours}
+          stopWatchMinutes={this.state.stopWatchMinutes}
+        />
+
         <Form inline>
           <FormControl
             className = "Deadline-input"
@@ -30,7 +47,18 @@ class App extends Component{
             onChange={event => this.setState({newDeadline: event.target.value})}
           />
           <Button onClick={()=> this.ChangeDeadline()}>
-            Submit
+            Submit Deadline
+          </Button>
+        </Form>
+
+        <Form inline>
+          <FormControl
+            className = "Deadline-input"
+            placeholder='new Time'
+            onChange={event => this.setState({newTime: event.target.value})}
+          />
+          <Button onClick={()=> this.ChangeStopWatchTime()}>
+            Submit Time
           </Button>
         </Form>
       </div>
