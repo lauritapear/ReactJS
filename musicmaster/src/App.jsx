@@ -18,7 +18,7 @@ class App extends Component{
     //const FETCH_URL: BASE_URL +'q='+ this.state.query
       //                + '&type=artist&limit=1'
    const FETCH_URL= `${BASE_URL}q=${this.state.query}&type=artist&limit=1`;
-    var accessToken = 'BQDQ2ubOxKQnOc2GJWrC6AXiHsW-R0pPJLtj7G8WFmhUghgosDrm98RElxm4zI2GNlZVJom1donbsS0BzgbiyvhldPv2P1brAStGWsgb2kDUELohaw4BWEd9fIc6nIjhBrW3oKCd3USBKZEgIBC8slBCdyJX7_YzSJfD7Tl_5-LiQuY'
+    var accessToken = 'BQCJikD_G7SXGfW2k0bmhj5fg43A2pDgIgBFP2FOgb__7Xs6T7hExxQddRBOFhgIeIfkIWTEsOmnxs4N0oLL_55K6dDsq9b9qaxL4FSJS6pXgmNJQ4QoZqz7ETlvQ-CyNff1GRkKGG2lMPWGd3V_slBlS2jAjQRRkvrLQVNbo1am00E'
     var myHeaders = new Headers();
 
     var myOptions = {
