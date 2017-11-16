@@ -1,0 +1,12 @@
+body {
+  background-image: url(pattern293.svg);
+  color: #696969;
+}
+.App{
+  text-align: center;
+  padding: 5%;
+}
+
+.App-title{
+  font-size: 26px;
+}

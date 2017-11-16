@@ -10,10 +10,8 @@ class App extends Component{
     this.state = {
       deadline: 'December 25, 2017',
       newDeadline: '',
-      stopWatchHours: '00',
-      stopWatchMinutes: '00',
-      newStopWatchHours: '',
-      newStopWatchMinutes: ''
+      stopWatchSeconds: '150',
+      newStopWatchSeconds: ''
     }
   }
 
@@ -22,10 +20,9 @@ class App extends Component{
     this.setState({deadline:this.state.newDeadline});
   }
 
-  ChangeStopWatchTime()
+  ChangeStopWatchTime(seconds)
   {
-    this.setState({stopWatchHours:this.state.newStopWatchHours,
-      stopWatchMinutes: this.state.newStopWatchMinutes });
+    this.setState({stopWatchSeconds:this.state.newStopWatchSeconds});
   }
 
   render(){
@@ -35,11 +32,6 @@ class App extends Component{
         <Clock
           deadline={this.state.deadline}
         />
-        <StopWatch
-          stopWatchHours={this.state.stopWatchHours}
-          stopWatchMinutes={this.state.stopWatchMinutes}
-        />
-
         <Form inline>
           <FormControl
             className = "Deadline-input"
@@ -51,11 +43,15 @@ class App extends Component{
           </Button>
         </Form>
 
+        <div className="App-tittle">StopWatch</div>
+        <StopWatch
+          stopWatchSeconds={this.state.stopWatchSeconds}
+        />
         <Form inline>
           <FormControl
-            className = "Deadline-input"
-            placeholder='new Time'
-            onChange={event => this.setState({newTime: event.target.value})}
+            className = "StopWatch-input"
+            placeholder='Stop Watch Seconds'
+            onChange={event => this.setState({newStopWatchSeconds: event.target.value})}
           />
           <Button onClick={()=> this.ChangeStopWatchTime()}>
             Submit Time

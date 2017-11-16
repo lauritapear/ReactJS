@@ -9,7 +9,6 @@ class Clock extends Component{
       hours: 0,
       minutes: 0,
       seconds: 0
-
     }
   }
 
