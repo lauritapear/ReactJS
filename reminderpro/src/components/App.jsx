@@ -16,7 +16,7 @@ class App extends Component{
   }
 
   deleteReminder(id){
-    //this.props.addReminder(this.state.text);
+    this.props.deleteReminder(id);
   }
 
   renderReminders(){
